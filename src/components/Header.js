@@ -101,7 +101,7 @@ const MobileMenu = ({ isOpen, onClose }) => (
               </li>
               <li>
                 <a
-                  href="#"
+                  href="/contact"
                   className="text-gray-700 hover:text-gray-900 font-medium"
                 >
                   Contact
@@ -205,12 +205,12 @@ export function Header() {
               </Link>
             </div>
             <nav className="hidden md:flex space-x-4">
-              <NavLink href="#">Home</NavLink>
-              <NavLink href="#" dropdown>
+              <NavLink href="/">Home</NavLink>
+              <NavLink href="/services" dropdown>
                 Services
               </NavLink>
-              <NavLink href="#">About</NavLink>
-              <NavLink href="#">Contact</NavLink>
+              <NavLink href="/about">About</NavLink>
+              <NavLink href="/contact">Contact</NavLink>
             </nav>
             <div className="md:hidden">
               <button onClick={() => setIsMobileMenuOpen(true)}>

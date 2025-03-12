@@ -91,11 +91,10 @@ export const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6 }}
         >
-          The Holy Solution for Websites,
-          <br />
+          A-Z Digitale Oplossingen: <br />
           <span className="relative">
             <span className="relative z-10 bg-gradient-to-r from-purple-600 via-pink-600 to-red-600 bg-clip-text text-transparent">
-              eCommerce, and Digital Domination
+              Websites die het Verschil Maken
             </span>
             <motion.span
               className="absolute inset-x-0 bottom-0 h-3 rounded-full bg-gradient-to-r from-purple-600/20 via-pink-600/20 to-red-600/20 blur-xl"
@@ -112,8 +111,8 @@ export const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8 }}
         >
-          My solutions arent for the average. I create systems that will elevate
-          your business and dominate your competition.
+          Geen standaard templates, maar een op maat gemaakte website die
+          perfect aansluit bij uw bedrijf én meer klanten oplevert.
         </motion.p>
 
         <motion.div
@@ -123,7 +122,7 @@ export const Hero = () => {
         >
           <button className="relative overflow-hidden rounded-full bg-black px-8 py-3 text-lg font-semibold text-white transition-all duration-300 hover:scale-105 hover:bg-gray-800">
             <span className="relative z-10 flex items-center gap-2">
-              Book a Strategy Call Now
+              Plan een strategiegesprek{" "}
               <motion.span
                 animate={{ x: [0, 5, 0] }}
                 transition={{ duration: 1.5, repeat: Infinity }}

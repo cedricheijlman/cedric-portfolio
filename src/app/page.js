@@ -1,13 +1,13 @@
-import { TestimonialsSection } from "../components/homepage/testimonials-section";
+import FAQ from "@/components/homepage/FAQ";
 import { Hero } from "../components/homepage/hero";
-import { ServicesSection } from "../components/homepage/services-section";
+import Work from "@/components/homepage/work";
 
 export default function Home() {
   return (
-    <main className="relative">
+    <main className="relative flex flex-col items-center">
       <Hero />
-      <ServicesSection />
-      <TestimonialsSection />
+      <Work />
+      <FAQ />
     </main>
   );
 }
