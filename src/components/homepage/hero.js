@@ -45,7 +45,7 @@ const FloatingParticles = () => {
 
 export const Hero = () => {
   return (
-    <section className="relative min-h-screen overflow-hidden bg-white px-6 pt-32 mt-16">
+    <section className="relative overflow-hidden bg-white px-6 pt-32 mt-16 mb-32">
       <FloatingParticles />
 
       <motion.div
