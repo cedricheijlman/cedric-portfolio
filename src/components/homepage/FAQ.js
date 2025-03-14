@@ -74,7 +74,7 @@ export default function FAQ() {
   };
 
   return (
-    <section className="flex flex-col w-full items-center mb-20 max-w-[800px]">
+    <section className="flex flex-col w-full items-center mb-20 max-w-[800px] px-8">
       <h2 className="text-5xl font-bold mb-8" aria-level="2">
         Veelgestelde vragen
       </h2>

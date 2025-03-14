@@ -29,17 +29,21 @@ const processSteps = [
 
 function ProcessGrid() {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 max-w-[1000px]">
+    <div className="grid grid-cols-1 sm:grid-cols-2 min-[1000px]:grid-cols-4 gap-8 ">
       {processSteps.map((step, index) => (
         <div
           key={index}
-          className="bg-white p-8 rounded-lg shadow-lg flex flex-col items-center"
+          className="bg-white p-8 rounded-lg shadow-lg flex flex-col"
         >
-          <div className="w-16 h-16 bg-black text-white rounded-full flex items-center justify-center mb-4">
-            <span className="text-2xl font-bold">{step.number}</span>
+          <div className="w-16 h-16 text-white rounded-full flex justify-center mb-1">
+            <span className="text-6xl font-bold text-blue-100">
+              {step.number}
+            </span>
           </div>
-          <h3 className="text-xl font-semibold mb-4">{step.title}</h3>
-          <p className="text-center text-gray-600">{step.description}</p>
+          <h3 className="text-xl font-semibold mb-4 text-black">
+            {step.title}
+          </h3>
+          <p className=" text-gray-600">{step.description}</p>
         </div>
       ))}
     </div>
@@ -48,18 +52,11 @@ function ProcessGrid() {
 
 function Work() {
   return (
-    <section className="flex flex-col items-center w-full  mb-20 bg-black  text-white py-16">
-      <h2 className="text-5xl font-bold mb-8">
-        <span className="relative z-10 bg-gradient-to-r from-yellow-500 via-orange-500 to-red-500 bg-clip-text text-transparent">
-          Jouw
-        </span>{" "}
-        Project,{" "}
-        <span className="relative z-10 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">
-          Onze
-        </span>{" "}
-        Aanpak
+    <section className="flex flex-col items-center w-full  mb-20 bg-black  text-white py-24 px-8">
+      <h2 className="text-4xl sm:text-5xl text-center font-semibold mb-8">
+        Hoe wij te werk gaan{" "}
       </h2>
-      <p className="text-xl text-gray-500 mb-8 text-center">
+      <p className="text-xl text-gray-500 mb-20 text-center max-w-[800px]">
         Wij volgen een bewezen methodologie om websites te creëren die niet
         alleen er goed uitzien, maar ook meetbare resultaten opleveren.
       </p>
