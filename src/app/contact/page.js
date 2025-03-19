@@ -1,8 +1,6 @@
 "use client";
 import React from "react";
-import { Hero } from "../../components/contact/Hero";
-import { motion } from "framer-motion";
-import { Calendar, ChevronRight, Mail, Phone } from "lucide-react";
+import { Hero } from "@/components/contact/Hero";
 import ContactForm from "@/components/contact/ContactForm";
 import ContactInfo from "@/components/contact/ContactInfo";
 
