@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { Hero } from "@/components/contact/Hero";
+import Hero from "@/components/contact/Hero";
 import ContactForm from "@/components/contact/ContactForm";
 import ContactInfo from "@/components/contact/ContactInfo";
 
