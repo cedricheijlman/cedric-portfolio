@@ -3,7 +3,7 @@ import { motion } from "motion/react";
 
 import React from "react";
 
-export function Hero() {
+function Hero() {
   return (
     <motion.div className="flex flex-col px-4 items-center pt-[200px] max-w-[1000px] mx-auto mb-20">
       <div className="relative mb-10">
@@ -26,3 +26,5 @@ export function Hero() {
     </motion.div>
   );
 }
+
+export default Hero;
