@@ -132,7 +132,7 @@ const MobileMenu = ({ isOpen, onClose }) => (
 );
 
 const ContactBar = () => (
-  <div className="bg-gray-100 py-1 text-xs">
+  <div className="bg-gray-100 py-2 text-xs">
     <div className="container mx-auto px-4 sm:px-6 lg:px-8">
       <div className="flex justify-between items-center">
         <div className="flex space-x-4">
@@ -153,11 +153,6 @@ const ContactBar = () => (
             +31 612479639
           </motion.a>
         </div>
-        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-          <button className="bg-black text-white hover:bg-gray-800 text-xs py-1 px-3 h-auto rounded-full font-semibold">
-            Get in touch
-          </button>
-        </motion.div>
       </div>
     </div>
   </div>
@@ -189,8 +184,8 @@ export function Header() {
         }`}
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-14">
-            <div className="flex items-center">
+          <div className="flex items-center justify-between h-16">
+            <div className="flex items-center justify-center">
               <Link href="/" className="flex items-center">
                 <motion.span
                   className="text-2xl mr-2"
@@ -204,14 +199,18 @@ export function Header() {
                 </span>
               </Link>
             </div>
-            <nav className="hidden md:flex space-x-4">
+            <nav className="hidden md:flex space-x-4 items-center">
               <NavLink href="/">Home</NavLink>
               <NavLink href="/services" dropdown>
                 Services
               </NavLink>
               <NavLink href="/about">About</NavLink>
-              <NavLink href="/contact">Contact</NavLink>
+              <NavLink href="/contact">Contact</NavLink>{" "}
+              <button className="bg-black hidden md:block text-white px-4 text-[14px] py-[7px] mb-[4px] rounded font-medium">
+                Plan een call
+              </button>
             </nav>
+
             <div className="md:hidden">
               <button onClick={() => setIsMobileMenuOpen(true)}>
                 <Menu className="h-6 w-6 text-gray-700" />
