@@ -3,47 +3,47 @@ import React from "react";
 const processSteps = [
   {
     number: "01",
-    title: "Ontdekking",
+    title: "Strategische Sessie",
     description:
-      "We leren je bedrijf, doelen en doelgroep kennen om een strategisch plan te maken.",
+      "We duiken diep in jouw merk, doelen en doelgroep. Dit is de fundering voor een digitale ervaring die écht verschil maakt.",
   },
   {
     number: "02",
-    title: "Ontwerp",
+    title: "Design met Impact",
     description:
-      "Onze designers creëren een custom look die aansluit bij je merk en conversiedoelen.",
+      "We creëren een visueel meesterwerk dat niet alleen mooi is, maar jouw merk versterkt én conversies drijft.",
   },
   {
     number: "03",
-    title: "Ontwikkeling",
+    title: "Krachtige Ontwikkeling",
     description:
-      "We bouwen je site met schone code, zodat deze snel, responsief en gebruiksvriendelijk is.",
+      "Pixel-perfect, razendsnel en geoptimaliseerd voor elk device. Gebouwd met schone code voor topprestaties.",
   },
   {
     number: "04",
-    title: "Lancering & Optimalisatie",
+    title: "Lancering + Groei",
     description:
-      "Na lancering monitoren en optimaliseren we continu voor maximale prestaties.",
+      "We lanceren met precisie, meten alles en optimaliseren continu. Resultaat: een website die blijft presteren én groeien.",
   },
 ];
 
 function ProcessGrid() {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 min-[1000px]:grid-cols-4 gap-8 ">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mt-12">
       {processSteps.map((step, index) => (
         <div
           key={index}
-          className="bg-white p-8 rounded-lg shadow-lg flex flex-col"
+          className="bg-white/70 backdrop-blur-lg border border-white/30 p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-shadow duration-300"
         >
-          <div className="w-16 h-16 text-white rounded-full flex justify-center mb-1">
-            <span className="text-6xl font-bold text-blue-100">
-              {step.number}
-            </span>
+          <div className="w-14 h-14 flex items-center justify-center bg-gradient-to-br from-blue-500 to-purple-500 text-white rounded-full mb-6 shadow-sm font-bold text-lg">
+            {step.number}
           </div>
-          <h3 className="text-xl font-semibold mb-4 text-black">
+          <h3 className="text-xl font-semibold text-gray-900 mb-3">
             {step.title}
           </h3>
-          <p className=" text-gray-600">{step.description}</p>
+          <p className="text-gray-700 text-sm leading-relaxed">
+            {step.description}
+          </p>
         </div>
       ))}
     </div>
@@ -52,13 +52,14 @@ function ProcessGrid() {
 
 function Work() {
   return (
-    <section className="flex flex-col items-center w-full  mb-20 bg-black  text-white py-24 px-8">
-      <h2 className="text-4xl sm:text-5xl text-center font-semibold mb-8">
-        Hoe wij te werk gaan{" "}
+    <section className="w-full py-24 px-6 md:px-12 flex flex-col items-center text-gray-900 bg-gradient-to-b from-blue-50 via-white to-purple-50">
+      <h2 className="text-4xl sm:text-5xl font-extrabold text-center leading-tight mb-6">
+        Onze werkwijze: Gericht op jouw groei 🚀
       </h2>
-      <p className="text-xl text-gray-500 mb-20 text-center max-w-[800px]">
-        Wij volgen een bewezen methodologie om websites te creëren die niet
-        alleen er goed uitzien, maar ook meetbare resultaten opleveren.
+      <p className="text-lg md:text-xl text-gray-600 text-center max-w-3xl mb-16">
+        Geen standaard templates of oppervlakkige oplossingen. Wij bouwen
+        strategisch, creatief en conversiegericht – volledig afgestemd op wat
+        jij nodig hebt om online te winnen.
       </p>
 
       <ProcessGrid />

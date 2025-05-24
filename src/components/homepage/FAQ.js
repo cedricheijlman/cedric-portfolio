@@ -1,6 +1,7 @@
 "use client";
+import React, { useState, useRef } from "react";
 import { ChevronDown } from "lucide-react";
-import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const faqs = [
   {
@@ -36,32 +37,56 @@ const faqs = [
 ];
 
 const FaqCard = ({ question, answer, isOpen, onClick, index }) => {
+  const headerRef = useRef(null);
+
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      onClick();
+    }
+  };
+
   return (
-    <div className="flex flex-col w-full items-center" key={index}>
+    <div className="w-full max-w-3xl mb-6" key={index}>
       <div
-        onClick={onClick}
-        className="mb-4 flex w-full items-center bg-gray-900 px-10 py-6 rounded-md justify-between cursor-pointer"
+        ref={headerRef}
+        tabIndex={0}
         role="button"
         aria-expanded={isOpen}
         aria-controls={`faq-answer-${index}`}
+        onClick={onClick}
+        onKeyDown={handleKeyDown}
+        className="flex justify-between items-center bg-gradient-to-r from-blue-500 to-purple-600 px-6 py-5 rounded-lg cursor-pointer shadow-md focus:outline-none focus:ring-4 focus:ring-purple-400 select-none"
       >
-        <h3 className="text-white text-xl font-bold">{question}</h3>
-        <ChevronDown
-          className={`text-white transition-transform duration-300 ease-in-out ${
-            isOpen ? "rotate-180" : ""
-          }`}
-        />
+        <h3 className="text-white text-xl font-semibold">{question}</h3>
+        <motion.div
+          animate={{ rotate: isOpen ? 180 : 0 }}
+          transition={{ duration: 0.3, ease: "easeInOut" }}
+          aria-hidden="true"
+        >
+          <ChevronDown className="text-white" size={24} />
+        </motion.div>
       </div>
-      <div
-        id={`faq-answer-${index}`}
-        className={`flex w-full items-center px-8 text-1xl overflow-hidden transition-all duration-300 ease-in-out ${
-          isOpen
-            ? "max-h-[2000px] opacity-100 translate-y-0"
-            : "max-h-0 opacity-0 translate-y-4"
-        }`}
-      >
-        <p className="mt-2 mb-12 text-[17px]">{answer}</p>
-      </div>
+
+      <AnimatePresence initial={false}>
+        {isOpen && (
+          <motion.div
+            id={`faq-answer-${index}`}
+            key="content"
+            initial="collapsed"
+            animate="open"
+            exit="collapsed"
+            variants={{
+              open: { opacity: 1, height: "auto", marginTop: 16 },
+              collapsed: { opacity: 0, height: 0, marginTop: 0 },
+            }}
+            transition={{ duration: 0.4, ease: "easeInOut" }}
+            className="overflow-hidden px-6 text-white bg-blue-900 rounded-b-lg shadow-inner"
+          >
+            <p className="py-4 leading-relaxed text-[17px]">{answer}</p>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };
@@ -70,18 +95,26 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState(null);
 
   const handleClick = (index) => {
-    setOpenIndex(openIndex === index ? null : index); // Toggle open/close
+    setOpenIndex(openIndex === index ? null : index);
   };
 
   return (
-    <section className="flex flex-col w-full items-center mb-20 max-w-[800px] px-8">
-      <h2 className="text-5xl font-bold mb-8" aria-level="2">
+    <section
+      aria-labelledby="faq-heading"
+      className="flex flex-col items-center px-6 py-24 sm:px-8 md:px-0 mb-24"
+    >
+      <h2
+        id="faq-heading"
+        className="text-5xl font-extrabold  pb-2 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-700 leading-snug"
+      >
         Veelgestelde vragen
       </h2>
-      <p className="text-xl text-gray-500 mb-8 text-center">
+
+      <p className="max-w-3xl text-center mb-16 text-lg text-gray-400">
         Hieronder vindt u antwoorden op de meest gestelde vragen. Staat uw vraag
         er niet bij? Neem dan gerust contact op.
       </p>
+
       {faqs.map((faq, index) => (
         <FaqCard
           key={faq.question}
