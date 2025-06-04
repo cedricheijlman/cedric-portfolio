@@ -8,8 +8,8 @@ function PortfolioCard() {
       </h2>
 
       <p className="mb-4 ">
-        The Belgian company needed a new B2B platform to help digitise the sales
-        process and improve overall business performance.
+        De Nederlandse DJ had een moderne website nodig om zijn muziek te
+        presenteren, boekingen te stimuleren en zijn merk online te versterken.
       </p>
 
       <div className="flex mb-10 flex-wrap">
