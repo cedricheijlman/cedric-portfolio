@@ -11,6 +11,7 @@ const NavLink = ({ href, children, dropdown = false }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   // Check if current link is active or current path starts with href for dropdown
+  console.log("this the current fjjf:", href, pathname);
   const isActive = dropdown ? pathname.startsWith(href) : pathname === href;
 
   return (
@@ -21,12 +22,12 @@ const NavLink = ({ href, children, dropdown = false }) => {
     >
       <Link href={href} legacyBehavior passHref>
         <a
-          className={`flex items-center px-4 py-2 text-gray-700 transition-colors duration-300 font-medium relative
+          className={`flex items-center px-2 py-2  transition-colors duration-300 font-medium relative
             ${isActive ? "text-blue-600" : "hover:text-blue-600"}
           `}
           aria-current={isActive ? "page" : undefined}
         >
-          <span className="text-sm">{children}</span>
+          <span className="text-[16px]">{children}</span>
           {dropdown && (
             <ChevronDown
               className={`ml-1 h-4 w-4 transition-transform duration-300 ${
