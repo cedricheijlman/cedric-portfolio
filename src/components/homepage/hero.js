@@ -74,7 +74,7 @@ export const Hero = () => {
     <header
       role="banner"
       className="relative overflow-hidden bg-white px-6 pt-32 mt-16 mb-32"
-      aria-label="Introductie - CEDRIC TECH Digitale Oplossingen"
+      aria-label="Professionele websites op maat laten maken door CEDRIC TECH"
     >
       <FloatingParticles />
 
@@ -89,7 +89,7 @@ export const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
-          aria-label="Bedrijfsnaam en specialisatie"
+          aria-label="CEDRIC TECH - Webdesign en ontwikkeling"
         >
           CEDRIC{" "}
           <span className="text-gradient bg-gradient-to-br from-blue-500 to-purple-500 bg-clip-text text-transparent">
@@ -104,10 +104,10 @@ export const Hero = () => {
           transition={{ delay: 0.6 }}
           tabIndex={-1}
         >
-          A-Z Digitale Oplossingen: <br />
+          Professionele Website <br />
           <span className="relative">
             <span className="relative z-10 bg-gradient-to-br from-blue-500 to-purple-500 bg-clip-text text-transparent">
-              Websites die het Verschil Maken
+              Laten Maken op Maat
             </span>
             <motion.span
               className="absolute inset-x-0 bottom-0 h-3 rounded-full bg-gradient-to-br from-blue-500/20 to-purple-500/20 blur-xl"
@@ -124,10 +124,11 @@ export const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8 }}
-          aria-label="Beschrijving van digitale oplossingen"
+          aria-label="Wij bouwen op maat gemaakte websites die resultaat leveren"
         >
-          Geen standaard templates, maar een op maat gemaakte website die
-          perfect aansluit bij uw bedrijf én meer klanten oplevert.
+          Op zoek naar een professionele, snelle en converterende website? Wij
+          ontwerpen en bouwen alles op maat – geen templates, maar slimme
+          digitale oplossingen die écht klanten opleveren.
         </motion.p>
 
         <motion.div
@@ -138,7 +139,7 @@ export const Hero = () => {
           <button
             onClick={openCalendly}
             className="group relative overflow-hidden rounded-full bg-gradient-to-br from-blue-500 to-purple-500 px-8 py-3 text-lg font-semibold text-white transition-transform duration-300 hover:brightness-110 focus:outline-none focus:ring-4 focus:ring-blue-500 focus:ring-offset-2"
-            aria-label="Plan een strategiegesprek via Calendly"
+            aria-label="Plan een gratis strategiegesprek met CEDRIC TECH"
           >
             <span className="relative z-10 flex items-center gap-2">
               Plan een strategiegesprek{" "}

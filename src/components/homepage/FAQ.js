@@ -105,13 +105,14 @@ export default function FAQ() {
     >
       <h2
         id="faq-heading"
-        className="text-5xl font-extrabold  pb-2 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-700 leading-snug"
+        className="text-5xl font-extrabold pb-2 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-700 leading-snug"
       >
         Veelgestelde vragen
       </h2>
 
       <p className="max-w-3xl text-center mb-16 text-lg text-gray-400">
-        Hieronder vindt u antwoorden op de meest gestelde vragen. Staat uw vraag
+        Antwoorden op de meest gestelde vragen over professionele websites op
+        maat, inclusief prijs, doorlooptijd, beheer en hosting. Staat je vraag
         er niet bij? Neem dan gerust contact op.
       </p>
 
