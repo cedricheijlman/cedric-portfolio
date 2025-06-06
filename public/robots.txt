@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://cedrictech.nl
+
+# Sitemaps
+Sitemap: https://cedrictech.nl/sitemap.xml
