@@ -20,7 +20,7 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <main
+    <section
       role="main"
       aria-label="Homepage van Cedric Tech - specialist in professionele websites op maat"
       className="relative flex flex-col items-center"
@@ -33,6 +33,6 @@ export default function Home() {
 
       {/* Veelgestelde vragen: structured FAQ keywords en semantische opbouw */}
       <FAQ />
-    </main>
+    </section>
   );
 }
