@@ -75,7 +75,7 @@ export default function AboutPage() {
             <Code2 className="w-6 h-6 mr-2" />
             <h2 className="text-2xl font-bold">Hoe wij werken</h2>
           </div>
-          <ol className="list-decimal pl-5 text-gray-700 space-y-2">
+          <ul className="list-decimal pl-5 text-gray-700 space-y-2 list-none">
             <li>
               <strong>1. Strategiegesprek:</strong> we ontdekken wat jouw
               bedrijf nodig heeft
@@ -92,7 +92,7 @@ export default function AboutPage() {
               <strong>4. Lancering & groei:</strong> we meten, optimaliseren en
               bouwen verder
             </li>
-          </ol>
+          </ul>
         </motion.div>
 
         {/* Call-to-action */}
