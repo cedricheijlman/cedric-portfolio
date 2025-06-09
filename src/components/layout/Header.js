@@ -2,88 +2,37 @@
 
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Mail, Phone, Menu, X, ChevronDown } from "lucide-react";
+import { Mail, Phone, Menu, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-const NavLink = ({ href, children, dropdown = false }) => {
+const NavLink = ({ href, children }) => {
   const pathname = usePathname();
-  const [isOpen, setIsOpen] = useState(false);
-
-  // Check if current link is active or current path starts with href for dropdown
-  console.log("this the current fjjf:", href, pathname);
-  const isActive = dropdown ? pathname.startsWith(href) : pathname === href;
+  const isActive = pathname === href;
 
   return (
-    <div
-      className="relative group"
-      onMouseEnter={() => dropdown && setIsOpen(true)}
-      onMouseLeave={() => dropdown && setIsOpen(false)}
-    >
-      <Link href={href} legacyBehavior passHref>
-        <a
-          className={`flex items-center px-2 py-2  transition-colors duration-300 font-medium relative
-            ${isActive ? "text-blue-600" : "hover:text-blue-600"}
-          `}
-          aria-current={isActive ? "page" : undefined}
-        >
-          <span className="text-[16px]">{children}</span>
-          {dropdown && (
-            <ChevronDown
-              className={`ml-1 h-4 w-4 transition-transform duration-300 ${
-                isOpen ? "rotate-180" : ""
-              }`}
-            />
-          )}
-
-          {/* Underline only if active */}
-          {isActive && (
-            <motion.span
-              layoutId="underline"
-              className="absolute bottom-0 left-0 right-0 h-[2px] bg-blue-500 rounded"
-              initial={{ width: 0 }}
-              animate={{ width: "100%" }}
-              exit={{ width: 0 }}
-              transition={{ duration: 0.3 }}
-              style={{ originX: 0 }}
-              aria-hidden="true"
-            />
-          )}
-        </a>
-      </Link>
-
-      {dropdown && (
-        <AnimatePresence>
-          {isOpen && (
-            <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              transition={{ duration: 0.25 }}
-              className="absolute left-0 mt-2 w-52 rounded-lg shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50"
-            >
-              <div className="py-2">
-                <Link href="/services/service1" legacyBehavior passHref>
-                  <a className="block px-5 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 rounded">
-                    Service 1
-                  </a>
-                </Link>
-                <Link href="/services/service2" legacyBehavior passHref>
-                  <a className="block px-5 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 rounded">
-                    Service 2
-                  </a>
-                </Link>
-                <Link href="/services/service3" legacyBehavior passHref>
-                  <a className="block px-5 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 rounded">
-                    Service 3
-                  </a>
-                </Link>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      )}
-    </div>
+    <Link href={href} legacyBehavior passHref>
+      <a
+        className={`flex items-center px-2 py-2 transition-colors duration-300 font-medium relative
+          ${isActive ? "text-blue-600" : "hover:text-blue-600"}
+        `}
+        aria-current={isActive ? "page" : undefined}
+      >
+        <span className="text-[16px]">{children}</span>
+        {isActive && (
+          <motion.span
+            layoutId="underline"
+            className="absolute bottom-0 left-0 right-0 h-[2px] bg-blue-500 rounded"
+            initial={{ width: 0 }}
+            animate={{ width: "100%" }}
+            exit={{ width: 0 }}
+            transition={{ duration: 0.3 }}
+            style={{ originX: 0 }}
+            aria-hidden="true"
+          />
+        )}
+      </a>
+    </Link>
   );
 };
 
@@ -124,16 +73,6 @@ const MobileMenu = ({ isOpen, onClose }) => (
                     className="block text-gray-700 hover:text-blue-600 transition"
                   >
                     Portfolio
-                  </a>
-                </Link>
-              </li>
-              <li>
-                <Link href="/services" legacyBehavior passHref>
-                  <a
-                    onClick={onClose}
-                    className="block text-gray-700 hover:text-blue-600 transition"
-                  >
-                    Services
                   </a>
                 </Link>
               </li>
@@ -241,10 +180,7 @@ export function Header() {
 
           <nav className="hidden md:flex space-x-6 items-center">
             <NavLink href="/">Home</NavLink>
-            <NavLink href="/portfolio">Portfolio</NavLink>
-            <NavLink href="/services" dropdown>
-              Services
-            </NavLink>
+            <NavLink href="/projecten">Projecten</NavLink>
             <NavLink href="/about">About</NavLink>
             <NavLink href="/contact">Contact</NavLink>
 
