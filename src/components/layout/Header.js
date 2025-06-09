@@ -67,22 +67,22 @@ const MobileMenu = ({ isOpen, onClose }) => (
                 </Link>
               </li>
               <li>
-                <Link href="/portfolio" legacyBehavior passHref>
+                <Link href="/projecten" legacyBehavior passHref>
                   <a
                     onClick={onClose}
                     className="block text-gray-700 hover:text-blue-600 transition"
                   >
-                    Portfolio
+                    Projecten
                   </a>
                 </Link>
               </li>
               <li>
-                <Link href="/about" legacyBehavior passHref>
+                <Link href="/over-ons" legacyBehavior passHref>
                   <a
                     onClick={onClose}
                     className="block text-gray-700 hover:text-blue-600 transition"
                   >
-                    About
+                    Over ons
                   </a>
                 </Link>
               </li>
@@ -181,7 +181,7 @@ export function Header() {
           <nav className="hidden md:flex space-x-6 items-center">
             <NavLink href="/">Home</NavLink>
             <NavLink href="/projecten">Projecten</NavLink>
-            <NavLink href="/about">About</NavLink>
+            <NavLink href="/over-ons">Over ons</NavLink>
             <NavLink href="/contact">Contact</NavLink>
 
             <button className="ml-6 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-purple-600 hover:to-blue-600 transition text-white px-5 py-2 rounded-full font-semibold shadow-lg text-sm">
