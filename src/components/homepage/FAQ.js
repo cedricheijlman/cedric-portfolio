@@ -7,7 +7,7 @@ const faqs = [
   {
     question: "Hoeveel is de prijs van de website?",
     answer:
-      "De prijs van de website begint bij €500, afhankelijk van het type website en de specificaties. Neem contact op voor een vrijblijvende offerte.",
+      "De prijs van een website is afhankelijk van wat je nodig hebt: een simpele one-pager of een compleet op maat gebouwd platform met slimme functies. Wij geloven niet in standaardpakketten – jij krijgt een oplossing die écht werkt voor jouw doelen. Je investeert niet in een website, maar in een krachtige online aanwezigheid die klanten aantrekt, vertrouwen opbouwt en omzet verhoogt. Benieuwd wat dat voor jouw situatie betekent?",
   },
   {
     question: "Wat is inbegrepen in de prijs?",
