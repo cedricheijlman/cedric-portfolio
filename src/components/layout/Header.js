@@ -11,27 +11,26 @@ const NavLink = ({ href, children }) => {
   const isActive = pathname === href;
 
   return (
-    <Link href={href} legacyBehavior passHref>
-      <a
-        className={`flex items-center px-2 py-2 transition-colors duration-300 font-medium relative
-          ${isActive ? "text-blue-600" : "hover:text-blue-600"}
-        `}
-        aria-current={isActive ? "page" : undefined}
-      >
-        <span className="text-[16px]">{children}</span>
-        {isActive && (
-          <motion.span
-            layoutId="underline"
-            className="absolute bottom-0 left-0 right-0 h-[2px] bg-blue-500 rounded"
-            initial={{ width: 0 }}
-            animate={{ width: "100%" }}
-            exit={{ width: 0 }}
-            transition={{ duration: 0.3 }}
-            style={{ originX: 0 }}
-            aria-hidden="true"
-          />
-        )}
-      </a>
+    <Link
+      href={href}
+      className={`flex items-center px-2 py-2 transition-colors duration-300 font-medium relative ${
+        isActive ? "text-blue-600" : "hover:text-blue-600"
+      }`}
+      aria-current={isActive ? "page" : undefined}
+    >
+      <span className="text-[16px]">{children}</span>
+      {isActive && (
+        <motion.span
+          layoutId="underline"
+          className="absolute bottom-0 left-0 right-0 h-[2px] bg-blue-500 rounded"
+          initial={{ width: 0 }}
+          animate={{ width: "100%" }}
+          exit={{ width: 0 }}
+          transition={{ duration: 0.3 }}
+          style={{ originX: 0 }}
+          aria-hidden="true"
+        />
+      )}
     </Link>
   );
 };
@@ -56,46 +55,22 @@ const MobileMenu = ({ isOpen, onClose }) => (
           </button>
           <nav className="mt-8">
             <ul className="space-y-6 font-medium">
-              <li>
-                <Link href="/" legacyBehavior passHref>
-                  <a
-                    onClick={onClose}
+              {[
+                { label: "Home", href: "/" },
+                { label: "Projecten", href: "/projecten" },
+                { label: "Over ons", href: "/over-ons" },
+                { label: "Contact", href: "/contact" },
+              ].map(({ label, href }) => (
+                <li key={href}>
+                  <Link
+                    href={href}
                     className="block text-gray-700 hover:text-blue-600 transition"
-                  >
-                    Home
-                  </a>
-                </Link>
-              </li>
-              <li>
-                <Link href="/projecten" legacyBehavior passHref>
-                  <a
                     onClick={onClose}
-                    className="block text-gray-700 hover:text-blue-600 transition"
                   >
-                    Projecten
-                  </a>
-                </Link>
-              </li>
-              <li>
-                <Link href="/over-ons" legacyBehavior passHref>
-                  <a
-                    onClick={onClose}
-                    className="block text-gray-700 hover:text-blue-600 transition"
-                  >
-                    Over ons
-                  </a>
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" legacyBehavior passHref>
-                  <a
-                    onClick={onClose}
-                    className="block text-gray-700 hover:text-blue-600 transition"
-                  >
-                    Contact
-                  </a>
-                </Link>
-              </li>
+                    {label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </nav>
           <div className="mt-12 space-y-6 text-gray-700 text-sm">
@@ -171,11 +146,13 @@ export function Header() {
       <ContactBar />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <Link href="/" legacyBehavior passHref>
-            <a className="flex items-center font-extrabold text-2xl select-none">
-              <span className="text-gray-900">CEDRIC</span>
-              <span className="text-blue-600 ml-1">TECH</span>
-            </a>
+          <Link
+            href="/"
+            className="flex items-center font-extrabold text-2xl select-none"
+            aria-label="Homepagina Cedric Tech"
+          >
+            <span className="text-gray-900">CEDRIC</span>
+            <span className="text-blue-600 ml-1">TECH</span>
           </Link>
 
           <nav className="hidden md:flex space-x-6 items-center">
@@ -183,15 +160,17 @@ export function Header() {
             <NavLink href="/projecten">Projecten</NavLink>
             <NavLink href="/over-ons">Over ons</NavLink>
             <NavLink href="/contact">Contact</NavLink>
-
-            <button className="ml-6 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-purple-600 hover:to-blue-600 transition text-white px-5 py-2 rounded-full font-semibold shadow-lg text-sm">
+            <Link
+              href="/call"
+              className="ml-6 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-purple-600 hover:to-blue-600 transition text-white px-5 py-2 rounded-full font-semibold shadow-lg text-sm"
+            >
               Plan een call
-            </button>
+            </Link>
           </nav>
 
           <div className="md:hidden">
             <button
-              aria-label="Open menu"
+              aria-label="Open mobiel menu"
               onClick={() => setIsMobileMenuOpen(true)}
               className="text-gray-700 hover:text-blue-600 transition"
             >

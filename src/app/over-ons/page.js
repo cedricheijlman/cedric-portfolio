@@ -113,10 +113,11 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <Link href="/contact" legacyBehavior>
-            <a className="inline-flex items-center justify-center gap-2 px-6 py-3 text-white text-base font-semibold rounded-full bg-gradient-to-br from-blue-500 to-purple-500 hover:brightness-110 transition">
-              Plan een gesprek <ArrowRight className="w-4 h-4" />
-            </a>
+          <Link
+            href="/contact"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 text-white text-base font-semibold rounded-full bg-gradient-to-br from-blue-500 to-purple-500 hover:brightness-110 transition"
+          >
+            Plan een gesprek <ArrowRight className="w-4 h-4" />
           </Link>
         </motion.div>
       </section>
