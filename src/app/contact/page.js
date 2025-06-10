@@ -6,7 +6,7 @@ import ContactInfo from "@/components/contact/ContactInfo";
 
 function ContactPage() {
   return (
-    <section className="flex flex-col w-full items-center">
+    <section className="flex flex-col w-full items-center pb-20">
       <Hero />
       <div className="flex w-full justify-center h-full">
         <ContactForm />
