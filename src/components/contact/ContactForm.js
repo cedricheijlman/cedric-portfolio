@@ -111,7 +111,7 @@ function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="w-full max-w-2xl mr-8 bg-white border border-gray-200 rounded-2xl shadow-md p-10 space-y-6"
+      className="w-full max-w-2xl bg-white border border-gray-200 rounded-2xl shadow-md p-8 sm:p-10 space-y-6"
     >
       <h2 className="text-3xl font-extrabold text-gray-900 text-center">
         Neem contact op
