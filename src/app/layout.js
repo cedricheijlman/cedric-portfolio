@@ -8,6 +8,9 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "CEDRICTECH - Digital Domination",
+  icons: {
+    icon: "/faviconlogo.ico", // PNG in plaats van .ico
+  },
   description:
     "The Holy Solution for Websites, eCommerce, and Digital Domination",
 };
