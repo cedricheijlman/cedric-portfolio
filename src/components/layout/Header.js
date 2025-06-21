@@ -43,7 +43,7 @@ const MobileMenu = ({ isOpen, onClose }) => (
         animate={{ opacity: 1, x: 0 }}
         exit={{ opacity: 0, x: -320 }}
         transition={{ duration: 0.35, ease: "easeOut" }}
-        className="fixed inset-y-0 left-0 w-72 bg-white shadow-2xl z-50 overflow-y-auto"
+        className="fixed inset-y-0 left-0 w-72 min-h-screen bg-white shadow-2xl !z-50 overflow-y-auto"
       >
         <div className="relative p-6 border-b border-gray-200">
           <button
