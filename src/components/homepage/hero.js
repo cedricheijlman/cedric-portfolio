@@ -68,12 +68,12 @@ export const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
           >
-            <div className="h-24 w-32 overflow-hidden flex items-center justify-center">
+            <div className="h-36 mb-4 overflow-hidden flex items-center justify-center">
               <Image
                 src="/cedric1.png"
                 alt="Cedric Tech"
-                width={150}
-                height={150}
+                width={400}
+                height={400}
                 className="h-fit w-auto object-contain"
               />
             </div>
