@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "motion/react";
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 const FloatingParticles = () => {
   const [particles, setParticles] = useState([]);
@@ -62,15 +63,20 @@ export const Hero = () => {
           className="relative mx-auto max-w-7xl text-center"
         >
           <motion.div
-            className="mb-4 text-xl font-semibold text-gray-800"
+            className="text-center flex justify-center items-center font-semibold text-gray-800"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
           >
-            CEDRIC{" "}
-            <span className="text-gradient bg-gradient-to-br from-blue-500 to-purple-500 bg-clip-text text-transparent">
-              TECH
-            </span>
+            <div className="h-24 w-32 overflow-hidden flex items-center justify-center">
+              <Image
+                src="/cedric1.png"
+                alt="Cedric Tech"
+                width={150}
+                height={150}
+                className="h-fit w-auto object-contain"
+              />
+            </div>
           </motion.div>
 
           <motion.h1

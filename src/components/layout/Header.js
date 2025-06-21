@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { Mail, Phone, Menu, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 const NavLink = ({ href, children }) => {
   const pathname = usePathname();
@@ -151,8 +152,12 @@ export function Header() {
             className="flex items-center font-extrabold text-2xl select-none"
             aria-label="Homepagina Cedric Tech"
           >
-            <span className="text-gray-900">CEDRIC</span>
-            <span className="text-blue-600 ml-1">TECH</span>
+            <Image
+              src="/cedric1.png"
+              alt="Cedric Tech"
+              width={140}
+              height={140}
+            />
           </Link>
 
           <nav className="hidden md:flex space-x-6 items-center">
