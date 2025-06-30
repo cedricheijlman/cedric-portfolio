@@ -1,10 +1,24 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 function PortfolioCard({ project }) {
   return (
     <div className="bg-white mx-4 w-fit p-8 h-full flex flex-col justify-between">
-      <div>
+      <div className="flex flex-col h-full">
+        {project.images && project.images[0] ? (
+          <Image
+            src={project.images[0]}
+            alt={project.title}
+            width={300}
+            height={0}
+            className="w-full object-contain rounded-xl mb-4 border"
+          />
+        ) : (
+          <div className="w-full fit flex items-center justify-center rounded-xl mb-4 border text-gray-400 text-lg font-semibold">
+            geen foto op dit moment
+          </div>
+        )}
         <h2 className="font-semibold text-[24px] mb-2">{project.title}</h2>
 
         <p className="mb-4 ">{project.shortDescription}</p>

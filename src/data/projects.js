@@ -56,7 +56,7 @@ export const projects = [
       result: "Professionele DJ site",
     },
     images: [
-      "/images/armin-at-homepage.jpg",
+      "/armin-at-hoofdscherm.png",
       "/images/armin-at-portfolio.jpg",
       "/images/armin-at-contact.jpg",
     ],
@@ -124,7 +124,7 @@ export const projects = [
       result: "Online boekingen",
     },
     images: [
-      "/images/atousa-homepage.jpg",
+      "/atousa-beauty.png",
       "/images/atousa-services.jpg",
       "/images/atousa-booking.jpg",
     ],
