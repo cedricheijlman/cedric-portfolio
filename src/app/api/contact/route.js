@@ -7,7 +7,8 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 export async function POST(req) {
   try {
     const body = await req.json();
-    const { firstName, lastName, email, message } = body;
+    const { firstName, lastName, email, phone, company, message, subject } =
+      body;
 
     await resend.emails.send({
       from: "Cedric Tech <contact@cedrictech.nl>",
@@ -20,7 +21,10 @@ export async function POST(req) {
         <h2 style="margin-top: 0; color: #111827;">📥 Nieuw bericht via contactformulier</h2>
         <p style="font-size: 16px; color: #4b5563;">
           <strong>Naam:</strong> ${firstName} ${lastName}<br />
-          <strong>E-mail:</strong> <a href="mailto:${email}" style="color: #3b82f6;">${email}</a>
+          <strong>E-mail:</strong> <a href="mailto:${email}" style="color: #3b82f6;">${email}</a><br />
+          <strong>Telefoon:</strong> ${phone || "-"}<br />
+          <strong>Bedrijf:</strong> ${company || "-"}<br />
+          <strong>Onderwerp:</strong> ${subject || "-"}
         </p>
         <div style="margin: 24px 0; padding: 16px; background-color: #f3f4f6; border-left: 4px solid #3b82f6; color: #374151; white-space: pre-line;">
           ${message}
