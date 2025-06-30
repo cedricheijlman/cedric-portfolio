@@ -126,6 +126,11 @@ const ContactBar = () => (
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
+
+  // Check if we're on a project detail page
+  const isProjectDetailPage =
+    pathname.startsWith("/projecten/") && pathname !== "/projecten";
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -133,13 +138,23 @@ export function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Determine header background based on page type
+  const getHeaderBackground = () => {
+    if (isProjectDetailPage) {
+      // Always white on project detail pages
+      return "bg-white/70 backdrop-blur-md shadow-lg border-b border-blue-200";
+    }
+
+    if (isScrolled) {
+      return "bg-white/70 backdrop-blur-md shadow-lg border-b border-blue-200";
+    }
+
+    return "bg-transparent";
+  };
+
   return (
     <motion.header
-      className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-500 ${
-        isScrolled
-          ? "bg-white/70 backdrop-blur-md shadow-lg border-b border-blue-200"
-          : "bg-transparent"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-500 ${getHeaderBackground()}`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
