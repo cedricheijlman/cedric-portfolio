@@ -23,10 +23,10 @@ function ContactInfo() {
           <div className="flex-1 min-w-0">
             <h3 className="font-semibold text-gray-900 text-sm">Telefoon</h3>
             <a
-              href="tel:+31612345678"
+              href="tel:+31613371285"
               className="text-blue-600 hover:text-blue-700 font-medium transition-colors duration-200 text-sm"
             >
-              +31 6 12345678
+              +31 6 13371285
             </a>
           </div>
         </div>

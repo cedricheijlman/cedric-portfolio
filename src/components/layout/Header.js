@@ -83,11 +83,11 @@ const MobileMenu = ({ isOpen, onClose }) => (
               cjy.heijlman@gmail.com
             </a>
             <a
-              href="tel:+31612479639"
+              href="tel:+31613371285"
               className="flex items-center hover:text-blue-600 transition"
             >
               <Phone className="h-5 w-5 mr-3" />
-              +31 612479639
+              +31 6 13371285
             </a>
           </div>
         </div>
@@ -110,12 +110,12 @@ const ContactBar = () => (
             cjy.heijlman@gmail.com
           </motion.a>
           <motion.a
-            href="tel:+31612479639"
+            href="tel:+31613371285"
             className="flex items-center hover:text-blue-600 transition"
             whileHover={{ scale: 1.1 }}
           >
             <Phone className="h-3 w-3 mr-1" />
-            +31 612479639
+            +31 6 13371285
           </motion.a>
         </div>
       </div>

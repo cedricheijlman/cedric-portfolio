@@ -294,10 +294,10 @@ function ContactForm() {
           <p className="text-sm text-gray-500">
             Liever direct bellen?{" "}
             <a
-              href="tel:+31612345678"
+              href="tel:+31613371285"
               className="text-blue-600 font-semibold hover:underline"
             >
-              +31 6 12345678
+              +31 6 13371285
             </a>
           </p>
         </div>
