@@ -59,6 +59,7 @@ const MobileMenu = ({ isOpen, onClose }) => (
               {[
                 { label: "Home", href: "/" },
                 { label: "Projecten", href: "/projecten" },
+                { label: "Websites", href: "/websites" },
                 { label: "Over ons", href: "/over-ons" },
                 { label: "Contact", href: "/contact" },
               ].map(({ label, href }) => (
@@ -178,6 +179,7 @@ export function Header() {
           <nav className="hidden md:flex space-x-6 items-center">
             <NavLink href="/">Home</NavLink>
             <NavLink href="/projecten">Projecten</NavLink>
+            <NavLink href="/websites">Websites</NavLink>
             <NavLink href="/over-ons">Over ons</NavLink>
             <NavLink href="/contact">Contact</NavLink>
             <Link
