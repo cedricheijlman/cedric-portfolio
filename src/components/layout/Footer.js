@@ -8,9 +8,9 @@ import Image from "next/image";
 
 export function Footer() {
   return (
-    <footer className="relative bg-gradient-to-br from-white via-blue-100 to-blue-50 text-blue-900 pt-14 pb-10 mt-24 overflow-hidden">
+    <footer className="relative bg-gradient-to-br from-slate-900 via-blue-900 to-purple-900 text-blue-100 pt-14 pb-10 mt-24 overflow-hidden">
       {/* Subtiele bovenrand-glow */}
-      <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-blue-500 via-purple-500 to-blue-500 opacity-40 blur-lg" />
+      <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-blue-400 via-purple-500 to-blue-400 opacity-40 blur-lg" />
       <div className="container mx-auto px-4">
         <div className="flex flex-wrap md:flex-nowrap justify-between items-start gap-10 md:gap-0">
           {/* Logo & tagline */}
@@ -21,20 +21,21 @@ export function Footer() {
               aria-label="Homepagina Cedric Tech"
             >
               <Image
-                src="/cedric1.png"
+                src="/cedric1-white.png"
                 alt="Cedric Tech"
-                width={140}
-                height={140}
+                width={300}
+                height={300}
                 priority
+                className="h-32 w-auto"
               />
             </Link>
-            <p className="text-blue-800 text-base max-w-xs text-center md:text-left mt-2">
+            <p className="text-blue-100 text-base max-w-xs text-center md:text-left mt-2">
               Elevating businesses through innovative digital solutions.
             </p>
           </div>
           {/* Links */}
           <div className="w-full md:w-1/3 mb-10 md:mb-0 flex flex-col items-center">
-            <h4 className="text-lg font-semibold mb-4 tracking-wide uppercase text-blue-600">
+            <h4 className="text-lg font-semibold mb-4 tracking-wide uppercase text-blue-200">
               Snel naar
             </h4>
             <ul className="space-y-2">
@@ -67,7 +68,7 @@ export function Footer() {
           </div>
           {/* Socials */}
           <div className="w-full md:w-1/3 flex flex-col items-center md:items-end">
-            <h4 className="text-lg font-semibold mb-4 tracking-wide uppercase text-purple-600">
+            <h4 className="text-lg font-semibold mb-4 tracking-wide uppercase text-blue-200">
               Connect
             </h4>
             <div className="flex space-x-5 mb-4">
@@ -76,37 +77,37 @@ export function Footer() {
                 whileHover={{ scale: 1.15 }}
                 className="transition"
               >
-                <Facebook className="w-7 h-7 text-blue-600 hover:text-purple-600 transition" />
+                <Facebook className="w-7 h-7 text-blue-200 hover:text-white transition" />
               </motion.a>
               <motion.a
                 href="#"
                 whileHover={{ scale: 1.15 }}
                 className="transition"
               >
-                <Twitter className="w-7 h-7 text-blue-600 hover:text-purple-600 transition" />
+                <Twitter className="w-7 h-7 text-blue-200 hover:text-white transition" />
               </motion.a>
               <motion.a
                 href="#"
                 whileHover={{ scale: 1.15 }}
                 className="transition"
               >
-                <Instagram className="w-7 h-7 text-blue-600 hover:text-purple-600 transition" />
+                <Instagram className="w-7 h-7 text-blue-200 hover:text-white transition" />
               </motion.a>
               <motion.a
                 href="#"
                 whileHover={{ scale: 1.15 }}
                 className="transition"
               >
-                <Linkedin className="w-7 h-7 text-blue-600 hover:text-purple-600 transition" />
+                <Linkedin className="w-7 h-7 text-blue-200 hover:text-white transition" />
               </motion.a>
             </div>
-            <p className="text-blue-800 text-sm text-center md:text-right max-w-xs">
+            <p className="text-blue-200 text-sm text-center md:text-right max-w-xs">
               Volg ons voor inspiratie, tips en nieuws.
             </p>
           </div>
         </div>
-        <div className="mt-12 pt-8 border-t border-blue-200 text-center">
-          <p className="text-blue-600 text-xs tracking-wide">
+        <div className="mt-12 pt-8 border-t border-blue-800 text-center">
+          <p className="text-blue-300 text-xs tracking-wide">
             &copy; 2025 CEDRICTECH. All rights reserved.
           </p>
         </div>
