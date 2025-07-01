@@ -177,7 +177,7 @@ export function Header() {
             />
           </Link>
 
-          <nav className="hidden md:flex space-x-6 items-center">
+          <nav className="hidden lg:flex space-x-4 sm:space-x-6 items-center">
             <NavLink href="/">Home</NavLink>
             <NavLink href="/projecten">Projecten</NavLink>
             <NavLink href="/websites">Websites</NavLink>
@@ -186,13 +186,13 @@ export function Header() {
             <NavLink href="/contact">Contact</NavLink>
             <Link
               href="/call"
-              className="ml-6 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-purple-600 hover:to-blue-600 transition text-white px-5 py-2 rounded-full font-semibold shadow-lg text-sm"
+              className="ml-2 sm:ml-6 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-purple-600 hover:to-blue-600 transition text-white px-4 sm:px-5 py-2 rounded-full font-semibold shadow-lg text-xs sm:text-sm"
             >
               Plan een call
             </Link>
           </nav>
 
-          <div className="md:hidden">
+          <div className="lg:hidden">
             <button
               aria-label="Open mobiel menu"
               onClick={() => setIsMobileMenuOpen(true)}

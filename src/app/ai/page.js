@@ -222,10 +222,52 @@ export default function AiPage() {
               Van idee tot implementatie in 4 duidelijke stappen
             </p>
           </div>
-          <div className="relative">
+          {/* Mobiel: simpele verticale lijst */}
+          <div className="flex flex-col gap-8 md:hidden">
+            {[
+              {
+                step: "1",
+                title: "Advies & Analyse",
+                desc: "We analyseren jouw behoeften en identificeren AI-kansen",
+                icon: <Brain className="w-6 h-6" />,
+              },
+              {
+                step: "2",
+                title: "Strategie & Planning",
+                desc: "Ontwikkelen van een heldere AI-roadmap op maat",
+                icon: <Target className="w-6 h-6" />,
+              },
+              {
+                step: "3",
+                title: "Implementatie",
+                desc: "Bouwen en testen van de AI-oplossing",
+                icon: <Cpu className="w-6 h-6" />,
+              },
+              {
+                step: "4",
+                title: "Support & Groei",
+                desc: "Training, support en doorlopende optimalisatie",
+                icon: <TrendingUp className="w-6 h-6" />,
+              },
+            ].map((item) => (
+              <div
+                key={item.step}
+                className="bg-white rounded-2xl shadow-lg p-6 border-l-4 border-blue-500 flex flex-col items-center text-center"
+              >
+                <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-white font-bold mb-3">
+                  {item.step}
+                </div>
+                <h3 className="text-xl font-bold text-blue-800 mb-2">
+                  {item.title}
+                </h3>
+                <p className="text-gray-600 text-base">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+          {/* Desktop/tablet: timeline stijl */}
+          <div className="hidden md:block relative">
             {/* Timeline line */}
-            <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-500 to-purple-500 transform -translate-x-1/2"></div>
-
+            <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-500 to-purple-500 transform -translate-x-1/2"></div>
             <div className="space-y-12">
               {[
                 {

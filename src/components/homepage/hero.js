@@ -86,10 +86,10 @@ export const Hero = () => {
             transition={{ delay: 0.6 }}
             tabIndex={-1}
           >
-            Professionele Website <br />
+            Websites op maat <br />
             <span className="relative">
               <span className="relative z-10 bg-gradient-to-br from-blue-500 to-purple-500 bg-clip-text text-transparent">
-                Laten Maken op Maat
+                die converteren
               </span>
               <motion.span
                 className="absolute inset-x-0 bottom-0 h-3 rounded-full bg-gradient-to-br from-blue-500/20 to-purple-500/20 blur-xl"
@@ -107,9 +107,10 @@ export const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8 }}
           >
-            Wij bouwen op maat gemaakte websites die converteren. Geen
-            templates, maar digitale oplossingen afgestemd op jouw doelen. Plan
-            een gratis gesprek.
+            Wij bouwen A-Z op maat gemaakte websites die resultaat opleveren.
+            Wil je meer? Met slimme AI-oplossingen tillen we jouw bedrijf naar
+            een hoger niveau. Geen templates, maar digitale oplossingen
+            afgestemd op jouw doelen. Plan een gratis gesprek.
           </motion.p>
 
           <motion.div
