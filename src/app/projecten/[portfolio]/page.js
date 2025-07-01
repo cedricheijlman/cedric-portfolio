@@ -22,17 +22,17 @@ function PortfolioItemPage({ params }) {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <div className="relative bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white pt-[200px] pb-32 overflow-hidden">
+      <div className="relative bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white pt-32 pb-20 sm:pt-40 sm:pb-28 overflow-hidden">
         {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-500 rounded-full blur-3xl"></div>
+        <div className="absolute inset-0 opacity-10 pointer-events-none select-none">
+          <div className="absolute top-20 left-10 w-40 h-40 sm:w-72 sm:h-72 bg-blue-500 rounded-full blur-2xl sm:blur-3xl"></div>
+          <div className="absolute bottom-20 right-10 w-56 h-56 sm:w-96 sm:h-96 bg-purple-500 rounded-full blur-2xl sm:blur-3xl"></div>
         </div>
 
-        <div className="relative max-w-6xl mx-auto px-8">
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-8">
           <Link
             href="/projecten"
-            className="inline-flex items-center text-slate-300 hover:text-white mb-16 transition-colors duration-300 group"
+            className="inline-flex items-center text-slate-300 hover:text-white mb-8 sm:mb-16 transition-colors duration-300 group"
           >
             <div className="w-8 h-8 border border-slate-400 rounded-full flex items-center justify-center mr-3 group-hover:border-white transition-colors">
               <svg
@@ -55,25 +55,25 @@ function PortfolioItemPage({ params }) {
           </Link>
 
           <div className="max-w-4xl">
-            <div className="mb-8">
-              <span className="inline-block px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm font-medium text-slate-200 mb-6">
+            <div className="mb-6 sm:mb-8">
+              <span className="inline-block px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-xs sm:text-sm font-medium text-slate-200 mb-4 sm:mb-6">
                 {project.year} • {project.duration}
               </span>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight tracking-tight">
+            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 sm:mb-8 leading-tight tracking-tight">
               {project.title}
             </h1>
 
-            <p className="text-xl text-slate-300 mb-12 max-w-3xl leading-relaxed">
+            <p className="text-base sm:text-xl text-slate-300 mb-8 sm:mb-12 max-w-3xl leading-relaxed">
               {project.shortDescription}
             </p>
 
-            <div className="flex flex-wrap gap-3 mb-12">
+            <div className="flex flex-wrap gap-2 sm:gap-3 mb-8 sm:mb-12">
               {project.tags.map((tag, index) => (
                 <span
                   key={index}
-                  className="px-4 py-2 bg-white/10 backdrop-blur-sm text-white text-sm font-medium rounded-lg border border-white/20"
+                  className="px-3 py-1.5 sm:px-4 sm:py-2 bg-white/10 backdrop-blur-sm text-white text-xs sm:text-sm font-medium rounded-lg border border-white/20"
                 >
                   {tag}
                 </span>
@@ -81,12 +81,12 @@ function PortfolioItemPage({ params }) {
             </div>
 
             {project.externalLink && (
-              <div className="mb-12">
+              <div className="mb-8 sm:mb-12">
                 <a
                   href={project.externalLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center px-6 py-3 bg-white/20 backdrop-blur-sm text-white font-medium rounded-lg border border-white/20 hover:bg-white/30 transition-all duration-300 group"
+                  className="inline-flex items-center px-5 py-2.5 sm:px-6 sm:py-3 bg-white/20 backdrop-blur-sm text-white font-medium rounded-lg border border-white/20 hover:bg-white/30 transition-all duration-300 group text-sm sm:text-base"
                 >
                   <span className="mr-2">Bekijk live website</span>
                   <svg
@@ -106,7 +106,7 @@ function PortfolioItemPage({ params }) {
               </div>
             )}
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-8 border-t border-white/20">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 pt-6 sm:pt-8 border-t border-white/20">
               <div>
                 <span className="text-slate-400 text-sm font-medium uppercase tracking-wider">
                   Client
@@ -131,11 +131,11 @@ function PortfolioItemPage({ params }) {
       </div>
 
       {/* Project Details */}
-      <div className="max-w-7xl mx-auto px-8 py-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 py-12 sm:py-24">
         {/* Main Content Grid */}
-        <div className="grid grid-cols-1 xl:grid-cols-12 gap-16">
+        <div className="grid grid-cols-1 xl:grid-cols-12 gap-10 sm:gap-16">
           {/* Left Column - Main Content */}
-          <div className="xl:col-span-8 space-y-24">
+          <div className="xl:col-span-8 space-y-16 sm:space-y-24">
             {/* Project Overview */}
             <section>
               <div className="mb-12">
@@ -151,23 +151,21 @@ function PortfolioItemPage({ params }) {
                   {project.shortDescription}
                 </p>
 
-                <div className="relative overflow-hidden bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 rounded-3xl p-8 text-white">
-                  <div className="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full -translate-y-20 translate-x-20"></div>
-                  <div className="absolute bottom-0 left-0 w-32 h-32 bg-white/10 rounded-full translate-y-16 -translate-x-16"></div>
-
+                <div className="relative overflow-hidden bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 rounded-3xl p-4 sm:p-8 text-white">
+                  <div className="absolute top-0 right-0 w-24 h-24 sm:w-40 sm:h-40 bg-white/10 rounded-full -translate-y-10 sm:-translate-y-20 translate-x-10 sm:translate-x-20"></div>
+                  <div className="absolute bottom-0 left-0 w-20 h-20 sm:w-32 sm:h-32 bg-white/10 rounded-full translate-y-8 sm:translate-y-16 -translate-x-8 sm:-translate-x-16"></div>
                   <div className="relative z-10">
-                    <div className="text-center mb-8">
-                      <h3 className="text-3xl font-bold mb-4">
+                    <div className="text-center mb-6 sm:mb-8">
+                      <h3 className="text-xl sm:text-3xl font-bold mb-2 sm:mb-4">
                         Project succesverhaal
                       </h3>
-                      <p className="text-indigo-100 text-lg">
+                      <p className="text-indigo-100 text-base sm:text-lg">
                         Van uitdaging naar oplossing in {project.duration}
                       </p>
                     </div>
-
-                    <div className="flex items-center justify-center space-x-8">
-                      <div className="text-center">
-                        <div className="w-20 h-20 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:space-x-8">
+                      <div className="text-center mb-4 sm:mb-0">
+                        <div className="w-14 h-14 sm:w-20 sm:h-20 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-2 sm:mb-4">
                           <svg
                             className="w-10 h-10 text-white"
                             fill="none"
@@ -182,16 +180,16 @@ function PortfolioItemPage({ params }) {
                             />
                           </svg>
                         </div>
-                        <div className="text-2xl font-bold">Probleem</div>
-                        <div className="text-indigo-200 text-sm">
+                        <div className="text-lg sm:text-2xl font-bold">
+                          Probleem
+                        </div>
+                        <div className="text-indigo-200 text-xs sm:text-sm">
                           {project.projectStory?.problem || "Oude website"}
                         </div>
                       </div>
-
-                      <div className="w-16 h-0.5 bg-white/30"></div>
-
-                      <div className="text-center">
-                        <div className="w-20 h-20 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                      <div className="hidden sm:block w-16 h-0.5 bg-white/30"></div>
+                      <div className="text-center mb-4 sm:mb-0">
+                        <div className="w-14 h-14 sm:w-20 sm:h-20 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-2 sm:mb-4">
                           <svg
                             className="w-10 h-10 text-white"
                             fill="none"
@@ -206,16 +204,16 @@ function PortfolioItemPage({ params }) {
                             />
                           </svg>
                         </div>
-                        <div className="text-2xl font-bold">Oplossing</div>
-                        <div className="text-indigo-200 text-sm">
+                        <div className="text-lg sm:text-2xl font-bold">
+                          Oplossing
+                        </div>
+                        <div className="text-indigo-200 text-xs sm:text-sm">
                           {project.projectStory?.solution || "Nieuwe website"}
                         </div>
                       </div>
-
-                      <div className="w-16 h-0.5 bg-white/30"></div>
-
+                      <div className="hidden sm:block w-16 h-0.5 bg-white/30"></div>
                       <div className="text-center">
-                        <div className="w-20 h-20 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <div className="w-14 h-14 sm:w-20 sm:h-20 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-2 sm:mb-4">
                           <svg
                             className="w-10 h-10 text-white"
                             fill="none"
@@ -230,17 +228,18 @@ function PortfolioItemPage({ params }) {
                             />
                           </svg>
                         </div>
-                        <div className="text-2xl font-bold">Resultaat</div>
-                        <div className="text-indigo-200 text-sm">
+                        <div className="text-lg sm:text-2xl font-bold">
+                          Resultaat
+                        </div>
+                        <div className="text-indigo-200 text-xs sm:text-sm">
                           {project.projectStory?.result || "Succes!"}
                         </div>
                       </div>
                     </div>
-
-                    <div className="mt-8 text-center">
-                      <div className="inline-flex items-center px-6 py-3 bg-white/20 rounded-full">
-                        <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse mr-3"></div>
-                        <span className="font-medium">
+                    <div className="mt-6 sm:mt-8 text-center">
+                      <div className="inline-flex items-center px-4 py-2 sm:px-6 sm:py-3 bg-white/20 rounded-full">
+                        <div className="w-2 h-2 sm:w-3 sm:h-3 bg-green-400 rounded-full animate-pulse mr-2 sm:mr-3"></div>
+                        <span className="font-medium text-xs sm:text-base">
                           Live sinds {project.year}
                         </span>
                       </div>
@@ -265,9 +264,9 @@ function PortfolioItemPage({ params }) {
                   {project.clientChallenge}
                 </p>
 
-                <div className="bg-gradient-to-r from-red-50 to-orange-50 border-l-4 border-red-500 p-8 rounded-r-xl">
-                  <div className="flex items-start">
-                    <div className="w-12 h-12 bg-red-500 rounded-xl flex items-center justify-center mr-6 flex-shrink-0">
+                <div className="bg-gradient-to-r from-red-50 to-orange-50 border-l-4 border-red-500 p-4 sm:p-8 rounded-r-xl">
+                  <div className="flex flex-col sm:flex-row items-start">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-red-500 rounded-xl flex items-center justify-center mr-0 sm:mr-6 mb-4 sm:mb-0 flex-shrink-0">
                       <svg
                         className="w-6 h-6 text-white"
                         fill="none"
@@ -283,10 +282,10 @@ function PortfolioItemPage({ params }) {
                       </svg>
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold text-red-900 mb-4">
+                      <h3 className="text-base sm:text-xl font-bold text-red-900 mb-2 sm:mb-4">
                         Kernproblemen die we moesten oplossen:
                       </h3>
-                      <ul className="space-y-3 text-red-800">
+                      <ul className="space-y-2 sm:space-y-3 text-red-800 text-xs sm:text-base">
                         {project.coreProblems ? (
                           project.coreProblems.map((problem, index) => (
                             <li key={index} className="flex items-start">
@@ -392,15 +391,15 @@ function PortfolioItemPage({ params }) {
                   Wat de klant zegt
                 </h2>
               </div>
-              <div className="bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200 rounded-3xl p-12">
-                <div className="flex items-start">
-                  <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mr-8 flex-shrink-0">
+              <div className="bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200 rounded-2xl sm:rounded-3xl p-6 sm:p-12">
+                <div className="flex flex-col sm:flex-row items-start">
+                  <div className="w-14 h-14 sm:w-20 sm:h-20 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mr-0 sm:mr-8 mb-4 sm:mb-0 flex-shrink-0">
                     <span className="text-white font-bold text-2xl">
                       {project.client.charAt(0)}
                     </span>
                   </div>
                   <div className="flex-1">
-                    <blockquote className="text-2xl font-medium text-gray-900 mb-8 leading-relaxed">
+                    <blockquote className="text-lg sm:text-2xl font-medium text-gray-900 mb-4 sm:mb-8 leading-relaxed">
                       &ldquo;Cedric Tech heeft onze online aanwezigheid compleet
                       getransformeerd. De nieuwe website is niet alleen visueel
                       aantrekkelijk, maar ook veel functioneler en
@@ -409,11 +408,13 @@ function PortfolioItemPage({ params }) {
                       team heeft ons proces volledig begrepen en een oplossing
                       geleverd die perfect aansluit bij onze behoeften.&rdquo;
                     </blockquote>
-                    <div className="border-t border-blue-200 pt-6">
-                      <div className="font-bold text-gray-900 text-xl mb-1">
+                    <div className="border-t border-blue-200 pt-4 sm:pt-6">
+                      <div className="font-bold text-gray-900 text-base sm:text-xl mb-1">
                         {project.client}
                       </div>
-                      <div className="text-gray-600">CEO & Founder</div>
+                      <div className="text-gray-600 text-xs sm:text-base">
+                        CEO & Founder
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -440,7 +441,7 @@ function PortfolioItemPage({ params }) {
           </div>
 
           {/* Right Column - Sidebar */}
-          <div className="xl:col-span-4 space-y-16">
+          <div className="xl:col-span-4 space-y-10 sm:space-y-16 xl:mt-0 mt-16">
             {/* Business Value & Results Combined */}
             <section>
               <h3 className="text-2xl font-bold mb-6 text-gray-900">
@@ -547,43 +548,55 @@ function PortfolioItemPage({ params }) {
         </div>
 
         {/* Social Proof Section */}
-        <div className="mt-32 bg-gradient-to-r from-gray-50 to-blue-50 rounded-3xl p-16">
+        <div className="mt-20 sm:mt-32 bg-gradient-to-r from-gray-50 to-blue-50 rounded-2xl sm:rounded-3xl p-8 sm:p-16">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl font-bold mb-6 text-gray-900">
+            <h2 className="text-2xl sm:text-4xl font-bold mb-4 sm:mb-6 text-gray-900">
               Wat onze klanten zeggen
             </h2>
-            <p className="text-xl text-gray-600 mb-12 max-w-3xl mx-auto">
+            <p className="text-base sm:text-xl text-gray-600 mb-8 sm:mb-12 max-w-3xl mx-auto">
               &ldquo;Cedric Tech heeft onze online aanwezigheid compleet
               getransformeerd. De resultaten spreken voor zich.&rdquo;
             </p>
-            <div className="flex items-center justify-center space-x-8">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:space-x-8">
               <div className="text-center">
-                <div className="text-3xl font-bold text-blue-600">100%</div>
-                <div className="text-sm text-gray-600">Klanttevredenheid</div>
+                <div className="text-2xl sm:text-3xl font-bold text-blue-600">
+                  100%
+                </div>
+                <div className="text-xs sm:text-sm text-gray-600">
+                  Klanttevredenheid
+                </div>
               </div>
-              <div className="w-px h-12 bg-gray-300"></div>
+              <div className="hidden sm:block w-px h-12 bg-gray-300"></div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-blue-600">2</div>
-                <div className="text-sm text-gray-600">Projecten voltooid</div>
+                <div className="text-2xl sm:text-3xl font-bold text-blue-600">
+                  2
+                </div>
+                <div className="text-xs sm:text-sm text-gray-600">
+                  Projecten voltooid
+                </div>
               </div>
-              <div className="w-px h-12 bg-gray-300"></div>
+              <div className="hidden sm:block w-px h-12 bg-gray-300"></div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-blue-600">5/5</div>
-                <div className="text-sm text-gray-600">Gemiddelde rating</div>
+                <div className="text-2xl sm:text-3xl font-bold text-blue-600">
+                  5/5
+                </div>
+                <div className="text-xs sm:text-sm text-gray-600">
+                  Gemiddelde rating
+                </div>
               </div>
             </div>
           </div>
         </div>
 
         {/* Call to Action - Full Width */}
-        <div className="mt-32 relative">
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-900 to-blue-900 rounded-3xl"></div>
-          <div className="relative bg-gradient-to-r from-slate-900/95 to-blue-900/95 backdrop-blur-sm rounded-3xl p-16 text-center border border-white/10">
+        <div className="mt-20 sm:mt-32 relative">
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-900 to-blue-900 rounded-2xl sm:rounded-3xl"></div>
+          <div className="relative bg-gradient-to-r from-slate-900/95 to-blue-900/95 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-8 sm:p-16 text-center border border-white/10">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-white">
+              <h2 className="text-2xl sm:text-5xl font-bold mb-4 sm:mb-6 text-white">
                 Bekijk het live project
               </h2>
-              <p className="text-xl text-slate-300 mb-12 leading-relaxed">
+              <p className="text-base sm:text-xl text-slate-300 mb-8 sm:mb-12 leading-relaxed">
                 Wil je het project in actie zien? Bezoek de live website en
                 ervaar het resultaat zelf.
               </p>
@@ -592,7 +605,7 @@ function PortfolioItemPage({ params }) {
                   href={project.externalLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center bg-white text-slate-900 px-12 py-4 rounded-full font-semibold hover:bg-slate-100 transition-all duration-300 text-lg shadow-2xl hover:shadow-3xl transform hover:-translate-y-1"
+                  className="inline-flex items-center bg-white text-slate-900 px-8 py-3 sm:px-12 sm:py-4 rounded-full font-semibold hover:bg-slate-100 transition-all duration-300 text-base sm:text-lg shadow-2xl hover:shadow-3xl transform hover:-translate-y-1"
                 >
                   Bezoek website
                   <svg
@@ -611,7 +624,7 @@ function PortfolioItemPage({ params }) {
                 </a>
                 <Link
                   href="/contact"
-                  className="inline-flex items-center bg-transparent text-white border-2 border-white px-12 py-4 rounded-full font-semibold hover:bg-white hover:text-slate-900 transition-all duration-300 text-lg"
+                  className="inline-flex items-center bg-transparent text-white border-2 border-white px-8 py-3 sm:px-12 sm:py-4 rounded-full font-semibold hover:bg-white hover:text-slate-900 transition-all duration-300 text-base sm:text-lg"
                 >
                   Plan een gesprek
                   <svg
