@@ -46,16 +46,16 @@ const uspList = [
 
 const portfolioPreview = [
   {
-    image: "/websites-1.png",
-    title: "Beauty Salon Atousa",
-    desc: "Een conversiegerichte website voor een groeiende beautysalon.",
-    link: "/projecten/atousa-beauty",
+    image: "/armin-at-hoofdscherm.png",
+    title: "DJ Portfolio Website",
+    desc: "Conversiegerichte portfolio site voor een DJ, met boekingsmodule.",
+    link: "/projecten/armin-at-hoofdscherm",
   },
   {
-    image: "/armin-at-hoofdscherm.png",
-    title: "Armin Administratie",
-    desc: "Een professionele uitstraling voor een administratiekantoor.",
-    link: "/projecten/armin-administratie",
+    image: "/atousa-beauty.png",
+    title: "Beauty Salon Website",
+    desc: "Warme, klantvriendelijke site voor een salon, met online afspraken.",
+    link: "/projecten/atousa-beauty",
   },
 ];
 
@@ -68,36 +68,6 @@ export default function Home() {
     >
       {/* Hero sectie met sterke h1, call-to-action en SEO keywords */}
       <Hero />
-
-      {/* Trustbar met klantlogo's */}
-      <div className="w-full flex flex-col items-center py-6 bg-gradient-to-r from-blue-50 to-purple-50">
-        <span className="uppercase text-xs tracking-widest text-gray-500 mb-2">
-          Vertrouwd door ondernemers
-        </span>
-        <div className="flex flex-wrap gap-8 justify-center items-center">
-          <Image
-            src="/armin-at-hoofdscherm.png"
-            alt="Armin Administratie"
-            width={80}
-            height={40}
-            className="object-contain"
-          />
-          <Image
-            src="/atousa-beauty.png"
-            alt="Atousa Beauty"
-            width={80}
-            height={40}
-            className="object-contain"
-          />
-          <Image
-            src="/rod.png"
-            alt="Rod"
-            width={80}
-            height={40}
-            className="object-contain"
-          />
-        </div>
-      </div>
 
       {/* USP/voordelen sectie */}
       <section className="w-full max-w-6xl mx-auto py-20 px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
